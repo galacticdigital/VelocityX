@@ -803,7 +803,7 @@ class VxUniversal extends StatelessWidget {
   Widget cardWidget(Widget current, BuildContext context) {
     final ThemeData theme = Theme.of(context);
     final CardThemeData cardTheme = CardTheme.of(context);
-    
+
     return material(current,
         mType: MaterialType.card,
         mShadowColor: shadowColor ?? cardTheme.shadowColor ?? theme.shadowColor,
@@ -817,7 +817,7 @@ class VxUniversal extends StatelessWidget {
                     : borderRadius),
         mClipBehavior: clipBehavior ?? cardTheme.clipBehavior ?? Clip.none,
         mBorderOnForeground: true);
-}
+  }
 
   Material material(Widget current,
           {required MaterialType mType,
@@ -859,7 +859,6 @@ class VxUniversal extends StatelessWidget {
           radius: radius,
           borderRadius: borderRadius,
           customBorder: customBorder,
-          enableFeedback: enableFeedback ?? false,
           excludeFromSemantics: excludeFromSemantics,
           focusNode: focusNode,
           canRequestFocus: canRequestFocus,
