@@ -111,14 +111,12 @@ extension VxColorExtension on Color {
   MaterialColor materialColor() => Vx.getMaterialColor(this);
 
   /// whether the color is transparent or not
-  bool get isTransparent => a == 0;
+  bool get isTransparent => alpha == 0;
 
   /// Get the swatch of the color
-  MaterialColor get swatch => Colors.primaries.firstWhere(
-      (Color c) => c.r == r && c.g == g && c.b == b && c.a == a,
-      orElse: () => MaterialColor(
-          (a.toInt() << 24) | (r.toInt() << 16) | (g.toInt() << 8) | b.toInt(),
-          getMaterialColorValues));
+  MaterialColor get swatch =>
+      Colors.primaries.firstWhere((Color c) => c.value == value,
+          orElse: () => MaterialColor(value, getMaterialColorValues));
 
   /// Get MaterialColor values from the current color
   Map<int, Color> get getMaterialColorValues => {
@@ -152,8 +150,8 @@ extension VxColorExtension on Color {
 
   /// Prefixes a hash sign if [leadingHashSign] is set to `true` and returns the hexadecimal string value of the color.
   String toHex({bool leadingHashSign = true}) => '${leadingHashSign ? '#' : ''}'
-      '${a.round().toRadixString(16).padLeft(2, '0')}'
-      '${r.round().toRadixString(16).padLeft(2, '0')}'
-      '${g.round().toRadixString(16).padLeft(2, '0')}'
-      '${b.round().toRadixString(16).padLeft(2, '0')}';
+      '${alpha.toRadixString(16).padLeft(2, '0')}'
+      '${red.toRadixString(16).padLeft(2, '0')}'
+      '${green.toRadixString(16).padLeft(2, '0')}'
+      '${blue.toRadixString(16).padLeft(2, '0')}';
 }

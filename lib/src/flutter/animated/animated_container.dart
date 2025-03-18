@@ -201,7 +201,7 @@ class VxAnimatedBox extends VxWidgetBuilder<Widget>
   VxAnimatedBox shadowOutline({Color? outlineColor}) {
     _boxShadow = [
       BoxShadow(
-        color: outlineColor?.withValues(alpha: 0.5) ??
+        color: outlineColor?.withOpacity(0.5) ??
             const Color.fromRGBO(66, 153, 225, 0.5),
         blurRadius: 0.0,
         spreadRadius: 3.0,

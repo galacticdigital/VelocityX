@@ -106,9 +106,9 @@ mixin VxNeuMixin {
 
   Color _getNeuColor(Color baseColor, double amount) {
     Map<String, int> colors = {
-      'r': baseColor.r.toInt(),
-      'g': baseColor.g.toInt(),
-      'b': baseColor.b.toInt()
+      'r': baseColor.red,
+      'g': baseColor.green,
+      'b': baseColor.blue
     };
 
     colors = colors.map((key, value) {

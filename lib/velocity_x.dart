@@ -1,4 +1,4 @@
-library;
+library velocity_x;
 
 export 'package:vxstate/vxstate.dart';
 

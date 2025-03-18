@@ -759,9 +759,9 @@ mixin Vx {
   }
 
   static MaterialColor getMaterialColor(Color color) {
-    final int red = color.r.toInt();
-    final int green = color.g.toInt();
-    final int blue = color.b.toInt();
+    final int red = color.red;
+    final int green = color.green;
+    final int blue = color.blue;
 
     final Map<int, Color> shades = {
       50: Color.fromRGBO(red, green, blue, .1),
@@ -776,13 +776,7 @@ mixin Vx {
       900: Color.fromRGBO(red, green, blue, 1),
     };
 
-    return MaterialColor(
-      (color.a.toInt() << 24) |
-          (color.r.toInt() << 16) |
-          (color.g.toInt() << 8) |
-          color.b.toInt(),
-      shades,
-    );
+    return MaterialColor(color.value, shades);
   }
 
   /// Get Color in [int]
